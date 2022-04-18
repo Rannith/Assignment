@@ -28,9 +28,11 @@ multiStepForm.addEventListener('click', event => {
     if(tab == null){
         return
     }
+
     const inputs = [...formStep[currentTab].querySelectorAll(".input-box")];
-    console.log("inputs "+inputs.length);
+    // console.log("inputs "+inputs.length);
     let valid = true;
+
     inputs.forEach(input => {
         console.log(input);
         if(input.getAttribute('name') == 'Email') {
@@ -167,20 +169,20 @@ multiStepForm.addEventListener('click', event => {
                 userInput.classList.add('error');
                 // valid = false;
                 console.log('name not ok')
-                }
-                else if(regex.test(userInput.value) == false) {
+            }
+            else if(regex.test(userInput.value) == false) {
                 const errorMsg = document.getElementById('dobError');
                 errorMsg.innerHTML = 'Invalid date format(dd/mm/yyyy)';
                 //add error border
                 userInput.classList.add('error');
-                }
-                else if(age < 20) {
+            }
+            else if(age < 20) {
                 const errorMsg = document.getElementById('dobError');
                 errorMsg.innerHTML = 'Eligible once you are 20';
                 //add error border
                 userInput.classList.add('error');
-                }
-                else{
+            }
+            else{
                 errorMsg = document.getElementById('dobError');
                 errorMsg.innerHTML = '';
                 userInput.classList.remove('error');
