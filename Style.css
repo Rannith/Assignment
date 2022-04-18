@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    /* background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%; */
+    background-color: #6b6a6a;
+}
+
+fieldset {
+    text-align: center;
+    width: auto;
+    height: 700px;
+    margin: 5%;
+    padding: 0;
+    border: 3px solid aliceblue;
+    border-radius: 8px;
+}
+
+legend{
+    text-align: center;
+    /* color: rgb(54, 0, 81); */
+    /* color: #6b6a6a; */
+    color: black;
+    font-size: 30px;
+    font-family: 'Arial',sans-serif;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 white,
+                  1px -1px 0 white,
+                 -1px 1px 0 white,
+                  1px 1px 0 white;
+}
+
+.container {
+    background-color: aliceblue;
+    /* border: 1px solid #333; */
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 100px auto;
+    display: none;
+    
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 8px 16px;
+    padding: 4px;
+}
+
+.input-radio {
+    text-align: center;
+    margin: 5px;
+}
+
+.input-box {
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 4px;
+}
+
+.step-title {
+    margin: 16px 8px;
+    text-align: center;
+}
+
+.active {
+    display: block;
+}
+
+button {
+    background-color: #2fcaca;
+    color: aliceblue;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    /* background-color: #fff; */
+    border: 1px solid white;
+    color: #ffffff;
+    background-color: #0188fe;
+}
+
+.invalid-sentence{
+    color: red;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.error{
+    border: 2px solid red;
+}

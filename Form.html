@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee registration</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'> -->
+    <link rel="Stylesheet" href="Style.css">
+    <script src="Script.js" defer></script>
+</head>
+<body>
+    <form class="form-container">
+        <fieldset>
+            <legend>Employee Registration Form</legend>
+            <div data-step="1" class="container">
+                <h3 class="step-title">Basic Information</h3>
+                <div class="input-field">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" class="input-box" name="Email" placeholder="Email">
+                    <div class="invalid-sentence" id="emailError"></div>
+                </div>
+                <div class="input-field">
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" class="input-box" name="Password" placeholder="Password">
+                    <div class="invalid-sentence" id="passwordError"></div>
+                </div>
+                <div class="input-field">
+                    <label for="confirm-password">Confirm Password*</label>
+                    <input type="password" id="confirm-password" class="input-box" name="confirm_password" placeholder="Confirm Password">
+                    <div class="invalid-sentence" id="confirmPasswordError"></div>
+                </div>
+                <div class="input-field">
+                    <label for="first-name">First Name*</label>
+                    <input type="text" id="first-name" class="input-box" name="firstName" placeholder="First Name">
+                    <div class="invalid-sentence" id="firstNameError"></div>
+                </div>
+                <div class="input-field">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" class="input-box" placeholder="Last Name">
+                </div>
+                <div class="input-field">
+                    <button data-next class="input-box">Next</button>
+                </div>
+            </div>
+            <div data-step="2" class="container">
+                <h3 class="step-title">Other Information</h3>
+                <div class="input-field">
+                    <label for="date-birth">DOB*</label>
+                    <input type="text" id="date-birth" class="input-box" name="dob" placeholder="date of birth (yyyy/mm/dd)">
+                    <div class="invalid-sentence" id="dobError"></div>
+                </div>
+                <div class="input-radio">
+                    <label>Gender</label>
+                    <input type="radio"  id="male" name="gender">male
+                    <input type="radio" id="female" name="gender">female
+                    <input type="radio" id="other" name="gender">others
+                    
+                </div>
+                <div class="input-field">
+                    <label for="address">Address</label>
+                    <textarea id="address" class="input-box" placeholder="Address" rows="5" cols="50"></textarea>               
+                </div>
+                <div class="input-field">
+                    <label for="country-state">State</label>
+                    <select id="country-state" class="input-box" name="drop-down">
+                        <option value="Select Your State">Select Your State</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                    <div class="invalid-sentence" id="selectError"></div>
+                </div>
+                <div class="input-field">
+                    <label for="mobile-number">Phone Number*</label>
+                    <input type="tel" id="mobile-number" class="input-box" name="phone" placeholder="Mobile Number">
+                    <div class="invalid-sentence" id="phoneError"></div>
+                </div>
+                <div class="input-field">
+                    <button  data-previous id="previous-button" class="input-box">Previous</button>
+                    <button  data-next id="next-button" class="input-box">Next</button>
+                </div>
+            </div>
+            <div data-step="3" class="container">
+                <h3 class="step-title">Work Information</h3>
+                <div class="input-field">
+                    <label for="occupation">Occupation</label>
+                    <input type="text" id="occupation" class="input-box" placeholder="Enter Your Occupation">
+                </div>
+                <div class="input-field">
+                    <label for="experiance">Experiance</label>
+                    <input type="number" id="experiance" class="input-box" placeholder="Overall Experiance">
+                </div>
+                <div class="input-field">
+                    <button  data-previous id="previous-button" class="input-box">Previous</button>
+                    <button  data-next id="next-button" class="input-box">Next</button>
+                </div>
+            </div>
+            <div data-step="4" class="container">
+                <h3 class="step-title">Education Information</h3>
+                <div class="input-field">
+                    <label for="eduacation-select">Education</label>
+                    <select class="input-box" id="education-select" name="eduction-drop-down">
+                        <option value='Select Education'>Select Education</option>
+                        <option value='BE'>BE</option>
+                        <option value='BSC'>BSC</option>
+                        <option value='polytechnic'>polytechnic</option>
+                        <option value='ME'>ME</option>
+                        <option value='MSC'>MSC</option>
+                    </select>
+                    <div class="invalid-sentence" id="educationError"></div>
+                </div>
+                <div class="input-field">
+                    <label for="year-passing">Year Of Passing</label>
+                    <input type="text" id="year-passing" class="input-box" name="passing-year" placeholder="Year of Passing (mm/YYYY)">
+                </div>
+                <div class="input-field">
+                    <button  data-previous id="previous-button" class="input-box">Previous</button>
+                    <button  data-next id="next-button" class="input-box">Next</button>
+                </div>
+            </div>
+            <div data-step="5" class="container">
+                <h3 class="step-title">Team Information</h3>
+                <div class="input-field">
+                    <label for="department">Department</label>
+                    <select id="department" class="input-box" name="department-drop-down">
+                        <option value="Select Your Depatment">Select Your Depatment</option>
+                        <option value="Lamp">LAMP Practice</option>
+                        <option value="Dotnet">DOTNET Practice</option>
+                        <option value="Eba">EBA Practice</option>
+                        <option value="Oracle">Oracle Fusion</option>
+                        <option value="Bfs">BFS Java</option>
+                    </select>
+                    <div class="invalid-sentence" id="departmentError"></div>
+                </div>
+                <div class="input-radio">
+                    <input type="checkbox" id="check-box" class="input-box">
+                    <label for="check-box">I agree above mentioned deatils are true</label>
+                    <div class="invalid-sentence" id="checkBoxError"></div>
+                </div>
+                <div class="input-field">
+                    <button  data-previous id="previous-button" class="input-box">Previous</button>
+                    <button  data-next id="next-button" class="input-box">Next</button>
+                </div>
+            </div>
+            <div data-step="6" class="container">
+                <div class="input-field">
+                    <h1>Thank You for Registering the Employee Registration Form</h1>
+                </div>
+                <div class="input-field">
+                    <button data-previous id="previous-button" class="input-box">Previous</button>
+                    <button type="submit" id="next-button" class="input-box">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
