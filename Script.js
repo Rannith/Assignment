@@ -148,16 +148,19 @@ multiStepForm.addEventListener('click', event => {
             
             const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(\d{4})$/;
 
+            const extractBirth = userInput.value.split('/')
             const current = new Date();
-            const birthDate = new Date(userInput.value);
-            console.log(current)
-            console.log(birthDate)
-            const daysBetween = Math.round((current.getTime() - birthDate.getTime()) / (1000*60*60*24));
-            const age = daysBetween/365;
-            console.log(age)
+            const yyyy = current.getFullYear();
+            let mm = current.getMonth() + 1;
+            let dd = current.getDate();
+            if (dd < 10) 
+            dd = '0' + dd;
+            if (mm < 10) 
+            mm = '0' + mm;
+            let currentDate = dd+"/"+mm+"/"+yyyy
+            let extractCurrent = currentDate.split('/')
+            let age = extractCurrent[2] - extractBirth[2]
             if(userInput.value == "") {
-                // this.user.dateError = "Birth date required";
-                // this.displayErrorMessage(2,this.user.dateError);
                 const errorMsg = document.getElementById('dobError');
                 errorMsg.innerHTML = 'Birth date required';
                 //add error border
@@ -167,27 +170,20 @@ multiStepForm.addEventListener('click', event => {
                 }
                 else if(regex.test(userInput.value) == false) {
                 const errorMsg = document.getElementById('dobError');
-                errorMsg.innerHTML = 'Invalid date format(yyy/mm/dd)';
+                errorMsg.innerHTML = 'Invalid date format(dd/mm/yyyy)';
                 //add error border
                 userInput.classList.add('error');
-                // valid = false;
-                console.log('name not ok')
                 }
                 else if(age < 20) {
-                // this.user.dateError = "Eligible once you are 20";
-                // this.displayErrorMessage(2,this.user.dateError);
                 const errorMsg = document.getElementById('dobError');
                 errorMsg.innerHTML = 'Eligible once you are 20';
                 //add error border
                 userInput.classList.add('error');
-                // valid = false;
-                console.log('name not ok')
                 }
                 else{
                 errorMsg = document.getElementById('dobError');
                 errorMsg.innerHTML = '';
                 userInput.classList.remove('error');
-                // valid = true;
                 console.log('ok')
             }
         }
@@ -201,7 +197,6 @@ multiStepForm.addEventListener('click', event => {
                 errorMsg.innerHTML = 'Please select this field';
                 //add error border
                 userInput.classList.add('error');
-                // valid = false;
                 console.log('select not ok')
             }
             else{
@@ -239,7 +234,6 @@ multiStepForm.addEventListener('click', event => {
                 errorMsg.innerHTML = 'Please select this field';
                 //add error border
                 userInput.classList.add('error');
-                // valid = false;
                 console.log('select not ok')
             }
             else{
@@ -247,7 +241,6 @@ multiStepForm.addEventListener('click', event => {
                 errorMsg.innerHTML = '';
                 //remove error border
                 userInput.classList.remove('error');
-                // valid = true;
                 console.log('ok')
             }
         }
@@ -259,7 +252,6 @@ multiStepForm.addEventListener('click', event => {
                 errorMsg.innerHTML = 'Please select this field';
                 //add error border
                 userInput.classList.add('error');
-                // valid = false;
                 console.log('select not ok')
             }
             else{
@@ -267,7 +259,6 @@ multiStepForm.addEventListener('click', event => {
                 errorMsg.innerHTML = '';
                 //remove error border
                 userInput.classList.remove('error');
-                // valid = true;
                 console.log('ok')
             }
 
