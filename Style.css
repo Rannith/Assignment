@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
@@ -18,7 +18,7 @@ fieldset {
     border-radius: 8px;
 }
 
-legend{
+legend {
     text-align: center;
     color: black;
     font-size: 30px;
@@ -80,13 +80,13 @@ a:hover {
     background-color: #0188fe;
 }
 
-.invalid-sentence{
+.invalid-sentence {
     color: red;
     font-size: 12px;
     margin-bottom: 5px;
 }
 
-.error{
+.error {
     border: 2px solid red;
 }
 
@@ -103,38 +103,3 @@ button:hover {
     background-color: #0188fe;
 }
 
-/* .radio {
-    display: inline;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.radio__input {
-    display: none;
-}
-
-.radio__radio {
-    width: 15px;
-    height: 15px;
-    border: 2px solid #333;
-    border-radius: 50%;
-    margin-left: 170px;
-    box-sizing: border-box;
-    padding: 2px;
-}
-
-.radio__radio::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    display:block;
-    background-color: #0188fe;
-    border-radius: 50%;
-
-    transform: scale(0);
-}
-
-.radio__input:checked + .radio__radio::after {
-    transform: scale(1);
-} */
