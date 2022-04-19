@@ -12,16 +12,16 @@
     <form class="form-container">
         <fieldset>
             <legend>Employee Registration Form</legend>
-            <div data-step="1" class="container">
+            <div data-step="1" class="container active">
                 <h3 class="step-title">Basic Information</h3>
                 <div class="input-field">
                     <label for="email">Email*</label>
-                    <input type="email" id="email" class="input-box" name="Email" placeholder="Email">
+                    <input type="email" id="email" class="input-box" name="Email" placeholder="Email(example@gmail.com)">
                     <div class="invalid-sentence" id="emailError"></div>
                 </div>
                 <div class="input-field">
                     <label for="password">Password*</label>
-                    <input type="password" id="password" class="input-box" name="Password" placeholder="Password">
+                    <input type="password" id="password" class="input-box" name="Password" placeholder="Password" >
                     <div class="invalid-sentence" id="passwordError"></div>
                 </div>
                 <div class="input-field">
@@ -39,22 +39,24 @@
                     <input type="text" id="last-name" class="input-box" placeholder="Last Name">
                 </div>
                 <div class="input-field">
-                    <button data-next class="input-box">Next</button>
+                    <a data-next class="input-box" onclick="validateBasicForm()">Next</a>
                 </div>
             </div>
             <div data-step="2" class="container">
                 <h3 class="step-title">Other Information</h3>
                 <div class="input-field">
                     <label for="date-birth">DOB*</label>
-                    <input type="text" id="date-birth" class="input-box" name="dob" placeholder="date of birth (yyyy/mm/dd)">
+                    <input type="text" id="date-birth" class="input-box" name="dob" placeholder="date of birth (dd/mm/yyyy)">
                     <div class="invalid-sentence" id="dobError"></div>
                 </div>
-                <div class="input-radio">
-                    <label>Gender</label>
-                    <input type="radio"  id="male" name="gender">male
-                    <input type="radio" id="female" name="gender">female
-                    <input type="radio" id="other" name="gender">others
-                    
+                    <div class="input-radio">
+                        <div id="radio-container" class="input-box">
+                        <label>Gender</label>
+                        <input type="radio" class="input-box" id="male" name="gender">male
+                        <input type="radio" class="input-box" id="female" name="gender">female
+                        <input type="radio" class="input-box" id="other" name="gender">others
+                        <div class="invalid-sentence" id="genderError"></div>
+                    </div>
                 </div>
                 <div class="input-field">
                     <label for="address">Address</label>
@@ -110,8 +112,8 @@
                     <div class="invalid-sentence" id="phoneError"></div>
                 </div>
                 <div class="input-field">
-                    <button  data-previous id="previous-button" class="input-box">Previous</button>
-                    <button  data-next id="next-button" class="input-box">Next</button>
+                    <a  data-previous id="previous-button" class="input-box btn-previous">Previous</a>
+                    <a  data-next id="next-button" class="input-box" onclick="validateOtherForm()" >Next</a>
                 </div>
             </div>
             <div data-step="3" class="container">
@@ -122,11 +124,11 @@
                 </div>
                 <div class="input-field">
                     <label for="experiance">Experiance</label>
-                    <input type="number" id="experiance" class="input-box" placeholder="Overall Experiance">
+                    <input type="number" id="experiance" class="input-box" placeholder="Overall Experiance" min="0">
                 </div>
                 <div class="input-field">
-                    <button  data-previous id="previous-button" class="input-box">Previous</button>
-                    <button  data-next id="next-button" class="input-box">Next</button>
+                    <a  data-previous id="previous-button btn-previous" class="input-box btn-previous">Previous</a>
+                    <a  data-next id="next-button" class="input-box" onclick="validateWorkInformation()">Next</a>
                 </div>
             </div>
             <div data-step="4" class="container">
@@ -146,10 +148,11 @@
                 <div class="input-field">
                     <label for="year-passing">Year Of Passing</label>
                     <input type="text" id="year-passing" class="input-box" name="passing-year" placeholder="Year of Passing (mm/YYYY)">
+                    <div class="invalid-sentence" id="yearOfPassingError"></div>
                 </div>
                 <div class="input-field">
-                    <button  data-previous id="previous-button" class="input-box">Previous</button>
-                    <button  data-next id="next-button" class="input-box">Next</button>
+                    <a  data-previous id="previous-button" class="input-box btn-previous">Previous</a>
+                    <a  data-next id="next-button" class="input-box" onclick="validateEducationInformation()">Next</a>
                 </div>
             </div>
             <div data-step="5" class="container">
@@ -167,13 +170,15 @@
                     <div class="invalid-sentence" id="departmentError"></div>
                 </div>
                 <div class="input-radio">
-                    <input type="checkbox" id="check-box" class="input-box">
-                    <label for="check-box">I agree above mentioned deatils are true</label>
-                    <div class="invalid-sentence" id="checkBoxError"></div>
+                    <div id="check-container" class="input-box">
+                        <input type="checkbox" id="check-box" class="input-box">
+                        <label for="check-box">I agree above mentioned deatils are true</label>
+                        <div class="invalid-sentence" id="checkBoxError"></div>
+                    </div>
                 </div>
                 <div class="input-field">
-                    <button  data-previous id="previous-button" class="input-box">Previous</button>
-                    <button  data-next id="next-button" class="input-box">Next</button>
+                    <a  data-previous id="previous-button " class="input-box btn-previous">Previous</a>
+                    <a  data-next id="next-button" class="input-box" onclick="validationTeamInformation()">Next</a>
                 </div>
             </div>
             <div data-step="6" class="container">
@@ -181,7 +186,7 @@
                     <h1>Thank You for Registering the Employee Registration Form</h1>
                 </div>
                 <div class="input-field">
-                    <button data-previous id="previous-button" class="input-box">Previous</button>
+                    <a data-previous id="previous-button" class="input-box btn-previous">Previous</a>
                     <button type="submit" id="next-button" class="input-box">Submit</button>
                 </div>
             </div>

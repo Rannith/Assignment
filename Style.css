@@ -5,11 +5,7 @@
 }
 
 body {
-    /* background-image: url(background.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%; */
-    background-color: #6b6a6a;
+    background-color: lavender;
 }
 
 fieldset {
@@ -24,8 +20,6 @@ fieldset {
 
 legend{
     text-align: center;
-    /* color: rgb(54, 0, 81); */
-    /* color: #6b6a6a; */
     color: black;
     font-size: 30px;
     font-family: 'Arial',sans-serif;
@@ -38,7 +32,6 @@ legend{
 
 .container {
     background-color: aliceblue;
-    /* border: 1px solid #333; */
     border-radius: 8px;
     max-width: 400px;
     margin: 100px auto;
@@ -74,15 +67,14 @@ legend{
     display: block;
 }
 
-button {
+a {
     background-color: #2fcaca;
     color: aliceblue;
     margin-bottom: 8px;
     cursor: pointer;
 }
 
-button:hover {
-    /* background-color: #fff; */
+a:hover {
     border: 1px solid white;
     color: #ffffff;
     background-color: #0188fe;
@@ -97,3 +89,52 @@ button:hover {
 .error{
     border: 2px solid red;
 }
+
+button {
+    background-color: #2fcaca;
+    color: aliceblue;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 1px solid white;
+    color: #ffffff;
+    background-color: #0188fe;
+}
+
+/* .radio {
+    display: inline;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.radio__input {
+    display: none;
+}
+
+.radio__radio {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    margin-left: 170px;
+    box-sizing: border-box;
+    padding: 2px;
+}
+
+.radio__radio::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display:block;
+    background-color: #0188fe;
+    border-radius: 50%;
+
+    transform: scale(0);
+}
+
+.radio__input:checked + .radio__radio::after {
+    transform: scale(1);
+} */
